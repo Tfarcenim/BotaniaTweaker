@@ -6,7 +6,7 @@
   "mixins": [
     "InternalMethodHandlerMixin",
     "SubTileArcaneRoseMixin",
-    "SubTileDanelifeonMixin",
+    "SubTileDandelifeonMixin",
     "SubTileEndoflameMixin",
     "SubTileEntropinnyumMixin",
     "SubTileGourmaryllisMixin",
