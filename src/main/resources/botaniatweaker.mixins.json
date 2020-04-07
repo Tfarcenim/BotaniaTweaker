@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "package": "tfar.botaniatweaker.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "botaniatweaker.refmap.json",
+  "mixins": [
+    "InternalMethodHandlerMixin",
+    "SubTileArcaneRoseMixin",
+    "SubTileDanelifeonMixin",
+    "SubTileEndoflameMixin",
+    "SubTileEntropinnyumMixin",
+    "SubTileGourmaryllisMixin",
+    "SubTileHydroangeasMixin",
+    "SubTileKekimurusMixin",
+    "SubTileMunchdewMixin",
+    "SubTileNarslimmusMixin",
+    "SubTileRafflowsiaMixin",
+    "SubTileShulkMeNotMixin",
+    "SubTileSpectrolusMixin",
+    "SubTileThermalilyMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
