@@ -19,6 +19,11 @@ public class BotaniaTweakerConfig {
 
 	public static IntValue passive_flower_decay;
 
+	public static IntValue mana_pool_size;
+	public static IntValue diluted_mana_pool_size;
+	public static IntValue fabulous_mana_pool_size;
+	public static IntValue creative_mana_pool_size;
+
 	public static IntValue agricarnation_max_mana;
 	public static IntValue agricarnation_mana_cost;
 
@@ -103,7 +108,18 @@ public class BotaniaTweakerConfig {
 
 	public BotaniaTweakerConfig(ForgeConfigSpec.Builder builder) {
 		builder.push("misc");
+
 		passive_flower_decay = builder.defineInRange("passive_flower_decay",72000,1,Integer.MAX_VALUE);
+
+		mana_pool_size = builder.defineInRange("mana_pool_size",1000000,1,Integer.MAX_VALUE);
+
+		diluted_mana_pool_size = builder.defineInRange("diluted_mana_pool_size",1000000,1,Integer.MAX_VALUE);
+
+		fabulous_mana_pool_size = builder.defineInRange("fabulous_mana_pool_size",1000000,1,Integer.MAX_VALUE);
+
+		creative_mana_pool_size = builder.defineInRange("creative_mana_pool_size",1000000,1,Integer.MAX_VALUE);
+
+
 		builder.pop();
 
 		builder.push("generating flowers");
