@@ -112,7 +112,7 @@ public class BotaniaTweakerConfig {
 
 		mana_pool_size = builder.defineInRange("mana_pool_size",1000000,1,Integer.MAX_VALUE);
 
-		diluted_mana_pool_size = builder.defineInRange("diluted_mana_pool_size",1000000,1,Integer.MAX_VALUE);
+		diluted_mana_pool_size = builder.defineInRange("diluted_mana_pool_size",10000,1,Integer.MAX_VALUE);
 
 		fabulous_mana_pool_size = builder.defineInRange("fabulous_mana_pool_size",1000000,1,Integer.MAX_VALUE);
 
