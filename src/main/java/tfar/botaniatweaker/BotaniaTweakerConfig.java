@@ -1,6 +1,5 @@
 package tfar.botaniatweaker;
 
-import jdk.nashorn.internal.runtime.ScriptObject;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.IntValue;
 import net.minecraftforge.fml.ModLoadingContext;

@@ -4,7 +4,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "botaniatweaker.refmap.json",
   "mixins": [
-    "InternalMethodHandlerMixin",
+    "BotaniaAPIImplMixin",
     "SubTileAgricarnationMixin",
     "SubTileArcaneRoseMixin",
     "SubTileBellethornMixin",
