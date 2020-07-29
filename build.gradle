@@ -39,6 +39,7 @@ minecraft {
         client {
             workingDirectory project.file('run')
             arg "-mixin.config="+archivesBaseName+".mixins.json"
+            arg "-Dmixin.env.disableRefMap=true"
 
 
             // Recommended logging level for the console
@@ -54,6 +55,7 @@ minecraft {
         server {
             workingDirectory project.file('run')
             arg "-mixin.config="+archivesBaseName+".mixins.json"
+            arg "-Dmixin.env.disableRefMap=true"
 
 
             // Recommended logging level for the console
@@ -83,8 +85,6 @@ repositories{
         url = "https://modmaven.k-4u.nl"
     }
 
-    maven {url='https://dist.creeper.host/Sponge/maven'}
-    
     maven {url= "https://maven.blamejared.com/"}
     jcenter()
     mavenCentral()
@@ -100,8 +100,6 @@ dependencies {
     compile fg.deobf("vazkii.botania:Botania:${botania_version}")
 
     compile fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
-
-    compile 'org.spongepowered:mixin:0.8'
 
     compile fg.deobf("top.theillusivec4.curios:curios:${version_curios}") // Trinkets, REQUIRED
 
