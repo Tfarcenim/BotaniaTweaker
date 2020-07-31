@@ -10,13 +10,13 @@ import vazkii.botania.common.block.subtile.functional.SubTileOrechid;
 public class SubTileOrechidMixin {
 
 	@Inject(method = "getCost",
-					at = @At("HEAD"),remap = false)
+					at = @At("HEAD"),remap = false,cancellable = true)
 	private void configureCost(CallbackInfoReturnable<Integer> cir) {
 		cir.setReturnValue(BotaniaTweakerConfig.orechid_mana_cost.get());
 	}
 
 	@Inject(method = "getDelay",
-					at = @At("HEAD"),remap = false)
+					at = @At("HEAD"),remap = false,cancellable = true)
 	private void configureDelay(CallbackInfoReturnable<Integer> cir) {
 		cir.setReturnValue(BotaniaTweakerConfig.orechid_delay.get());
 	}

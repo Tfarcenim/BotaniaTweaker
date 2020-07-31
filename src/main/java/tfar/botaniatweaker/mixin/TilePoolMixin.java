@@ -32,8 +32,8 @@ abstract class TilePoolMixin extends TileEntity {
 	@ModifyConstant(method = "tick", constant = @Constant(intValue = 10000))
 	private int configDiluted(int original) {
 		BlockPool blockpool = ((BlockPool)this.getBlockState().getBlock());
-		switch (blockpool.variant){
-			case DILUTED: return BotaniaTweakerConfig.diluted_mana_pool_size.get();
+		if (blockpool.variant == BlockPool.Variant.DILUTED) {
+			return BotaniaTweakerConfig.diluted_mana_pool_size.get();
 		}
 		return original;
 	}
