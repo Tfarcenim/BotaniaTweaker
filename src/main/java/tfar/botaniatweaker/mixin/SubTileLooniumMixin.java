@@ -10,7 +10,7 @@ import vazkii.botania.common.block.subtile.functional.SubTileLoonuim;
 @Mixin(SubTileLoonuim.class)
 public class SubTileLooniumMixin {
 
-	@Overwrite
+	@Overwrite(remap = false)
 	public int getMaxMana() {
 		return BotaniaTweakerConfig.loonium_max_mana.get();
 	}
