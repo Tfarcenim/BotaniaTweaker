@@ -16,8 +16,7 @@ public class SubTileAgricarnationMixin {
 
 	@ModifyConstant(method = "tickFlower", constant = @Constant(intValue = 5),
 					slice = @Slice(
-									from = @At(value = "INVOKE", target = "vazkii/botania/common/block/subtile/functional/SubTileAgricarnation.getMana()I"),
-									to = @At(value = "INVOKE", target = "vazkii/botania/common/block/subtile/functional/SubTileAgricarnation.getWorld()Lnet/minecraft/world/World;",ordinal = 4)),
+									from = @At(value = "INVOKE", target = "vazkii/botania/common/block/subtile/functional/SubTileAgricarnation.getMana()I")),
 					remap = false)
 	private int configureCost1(int original) {
 		return BotaniaTweakerConfig.agricarnation_mana_cost.get();
