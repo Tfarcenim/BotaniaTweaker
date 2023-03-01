@@ -1,13 +1,11 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-        jcenter()
-        mavenCentral()
-        maven {url='https://dist.creeper.host/Sponge/maven'}
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
 
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
@@ -16,9 +14,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = "${mod_version}"
-group = "com.tfar.${modid}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "${modid}"
+version = "$mc_version-$mod_version"
+group = "tfar" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "$modid"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -28,7 +26,7 @@ minecraft {
     // stable_#            Stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: "snapshot", version: "${mapping}-1.16.1"
+    mappings channel: "snapshot", version: "${mapping}-1.16.3"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 
     //accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -79,16 +77,8 @@ repositories{
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
     }
-    maven {
-        // location of a maven mirror for JEI files, as a fallback
-        name = "ModMaven"
-        url = "https://modmaven.k-4u.nl"
-    }
 
     maven {url= "https://maven.blamejared.com/"}
-    jcenter()
-    mavenCentral()
-
 }
 
 dependencies {
@@ -97,11 +87,12 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}" //21
 
-    compile fg.deobf("vazkii.botania:Botania:${botania_version}")
+    implementation fg.deobf("vazkii.botania:Botania:${botania_version}")
 
-    compile fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
+    implementation fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
-    compile fg.deobf("top.theillusivec4.curios:curios:${version_curios}") // Trinkets, REQUIRED
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}") // Trinkets, REQUIRED
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
